@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Reddit+Mono:wght@200..900&display=swap');
 
-
+/* GERAIS */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,6 +15,8 @@ body {
     font-style: normal;
     background-color: #f7f7f7;
 }
+
+/* FIM GERAIS */
 
 /* navbar */
 nav {
@@ -31,11 +34,6 @@ nav {
     z-index: 1;
 }
 
-nav .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-
-}
 
 nav ul {
     list-style: none;
@@ -65,30 +63,6 @@ nav ul li a:hover {
 
 main {
     padding: 50px;
-
-}
-
-.description,
-.motivo,
-.sorteio {
-    margin-bottom: 2em;
-}
-
-.description p,
-.motivo p {
-    font-size: 1.1em;
-}
-
-.motivo h2 {
-    font-size: 1.5em;
-}
-
-.motivo {
-    margin-top: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 3em;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -104,26 +78,21 @@ main {
     height: 50vh;
 }
 
-.container label{
+.container label {
     font-family: "Lobster", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
 }
 
-.container h2{
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-}
-
-.container input{
+.container input {
     padding: 6px;
 }
 
-
 .container button {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     padding: 12px 24px;
     font-size: 18px;
     cursor: pointer;
@@ -139,28 +108,94 @@ main {
     background-color: #000;
 }
 
-textarea {
-    width: 100%;
-    padding: 20px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+@keyframes shake {
 
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
 }
 
 #result {
     font-size: 24px;
     margin-bottom: 20px;
-    animation: fadeIn 1s forwards;
-    color: #333;
+    animation: shake 10s forwards;
+    color: #9d4edd;
+    animation-iteration-count: infinite;
 }
+
+#historico {
+    font-size: 16px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+
+/* TEXTO MOTIVO */
+
+.motivo {
+    margin-top: 40px;
+    background-color: rgba(230, 214, 214, 0.048);
+    padding: 7em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.description,
+.motivo,
+.sorteio {
+    margin-bottom: 2em;
+}
+
+.motivo p {
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+
+.motivo h2 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8 em;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.motivo ol li {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+/* FIM TEXTO MOTIVO  */
+
+
+/* CARDS */
 
 .cards {
     display: flex;
     justify-content: center;
     gap: 150px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .card {
@@ -175,12 +210,12 @@ textarea {
     font-style: normal;
 }
 
-.card h5{
+.card h5 {
     text-align: center;
     font-family: "Lobster", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color:#9d4edd ;
+    color: #9d4edd;
 }
 
 
@@ -191,51 +226,112 @@ textarea {
     justify-content: center;
 }
 
+/* FIM CARDS */
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-#historico {
-    font-size: 16px;
-    max-height: 150px;
-    overflow-y: auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    margin-bottom: 20px;
-}
+/* FOOTER */
 
 footer {
+    padding: 20px;
     background-color: #5a189a;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    width: 100%;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
+    color: #fff;
 }
 
-footer p {
-    margin: 0.5em 0;
+.container-itens {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
+
+.container-itens div {
+    margin: 10px;
+}
+
+.container-itens h5 {
+    margin-bottom: 13px;
+    font-size: 18px;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.container-itens p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.container-itens a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container-itens a:hover {
+    color: #000;
+    transition: 0.7s;
+}
+
+.container-itens a i {
+    margin-right: 5px;
+
+}
+
+.footer__socials a {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* FIM FOOTER */
+
+
+/* ESPECIFICAS PAGE NOMES */
+
+.container h2 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+
+/* FIM ESPECIFICAS PAGE NOMES */
+
+
+
 
 @media (max-width: 1200px) {
- 
-.cards{
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 }
+
+@media (max-width: 750px) {
+    .container-itens {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container-itens div {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .footer__socials a {
+        margin-right: 15px;
+    }
 }
