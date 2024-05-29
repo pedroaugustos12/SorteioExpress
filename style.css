@@ -199,9 +199,10 @@ main {
 .card p {
     margin-top: 20px;
     text-align: center;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 100;
     font-style: normal;
+    font-size: 13px;
 }
 
 .card h5 {
