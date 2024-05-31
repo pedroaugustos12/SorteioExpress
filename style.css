@@ -329,4 +329,21 @@ textarea {
     .footer__socials a {
         margin-right: 15px;
     }
+
+    .motivo {
+        padding: 1.5em;
+    }
+    
+    .motivo p {
+        font-size:1em;
+    }
+    
+    .motivo h2 {
+        font-size: 2em;
+    }
+    
+    .motivo ol li {
+        font-size: 14px;
+    }
+     
 }
